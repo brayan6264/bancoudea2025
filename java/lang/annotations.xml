@@ -1,0 +1,9 @@
+<root>
+    <item name='java.lang.ExceptionInInitializerError serialVersionUID'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+        <annotation name='org.jetbrains.annotations.Range'>
+            <val name="from" val="0"/>
+            <val name="to" val="1000"/>
+        </annotation>
+    </item>
+</root>

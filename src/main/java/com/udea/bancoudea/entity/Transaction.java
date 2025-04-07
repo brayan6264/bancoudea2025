@@ -32,6 +32,10 @@ private LocalDateTime timestamp;
         this.timestamp = timestamp;
     }
 
+    @PrePersist
+    protected void onCreate() {
+        this.timestamp = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
