@@ -11,15 +11,15 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-private Long id;
-@Column(nullable = false)
-private String senderAccountNumber;
-@Column(nullable = false)
-private String receiverAccountNumber;
-@Column(nullable = false)
-private Double amount;
-@Column(nullable = false)
-private LocalDateTime timestamp;
+    private Long id;
+    @Column(nullable = false)
+    private String senderAccountNumber;
+    @Column(nullable = false)
+    private String receiverAccountNumber;
+    @Column(nullable = false)
+    private Double amount;
+    @Column(nullable = false)
+    private LocalDateTime timestamp;
 
     public Transaction() {
     }

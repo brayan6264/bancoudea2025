@@ -24,6 +24,7 @@ public class Customer {
 
     public Customer() {
     }
+    //no es necesaria la notación @ acá
     @JsonCreator
     public Customer(@JsonProperty("id") Long id, @JsonProperty("accountNumber") String accountNumber, @JsonProperty("firstName") String firstName, @JsonProperty("lastName")  String lastName, @JsonProperty("balance")  Double balance) {
         this.id = id;
