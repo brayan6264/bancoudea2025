@@ -114,6 +114,20 @@ public class TransactionService {
         }).collect(Collectors.toList());
     }
 
+    //d6.4
+    public TransactionDTO updateTransactionById(Long id, TransferRequestDTO transferRequestDTO){
+        Transaction transaction = transactionRepository.findById(id)
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "Transaccion no encontrada"));
+        transaction.setSenderAccountNumber(transferRequestDTO.getSenderAccountNumber());
+        transaction.setReceiverAccountNumber(transferRequestDTO.getReceiverAccountNumber());
+        transaction.setAmount(transferRequestDTO.getAmount());
+        Transaction updated = transactionRepository.save(transaction);
+        return transactionMapper.toDTO(updated);
+
+    }
+    //d6.4
+
+
     //d6.5
     public void deleteTransactionById(Long id){
         Transaction transaction = transactionRepository.findById(id)
