@@ -32,6 +32,9 @@ public class CustomerService {
     }
 
     public CustomerDTO createCustomer(CustomerDTO customerDTO){
+        if (customerRepository.findByAccountNumber(customerDTO.getAccountNumber()).isPresent()){
+            throw new IllegalArgumentException("El numero de cuenta ya está en uso.");
+        }
         Customer customer = customerMapper.toEntity(customerDTO);
         return customerMapper.toDTO(customerRepository.save(customer));
     }

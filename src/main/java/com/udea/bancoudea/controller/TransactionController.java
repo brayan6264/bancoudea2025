@@ -45,6 +45,15 @@ public class TransactionController {
     }
     //d6.3 LISTO
 
+    //d6.4
+    @PutMapping("/{id}")
+    public ResponseEntity<TransactionDTO> updateTransactionById(@PathVariable Long id, @RequestBody TransferRequestDTO transferRequestDTO){
+        TransactionDTO updated = transactionFacade.updateTransactionById(id, transferRequestDTO);
+        return ResponseEntity.ok(updated);
+
+    }
+    //d6.4
+
     //d6.5
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTransaction(@PathVariable Long id){
